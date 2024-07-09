@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual o melhor restaurante?</title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="./script.js"></script>
+</head>
+<body>
+    <div class="content">
+        <h1>Qual o melhor restaurante de Venda Nova? <img src="images/italy.png" alt="Italy Flag" style="width:8%;height:8%;"></h1>
+        <form id="restaurantForm">
+            <div>
+                <input type="name" id="name" placeholder="Digite seu nome" class="inputs">
+                <span class="span-required">Nome deve ter no mínimo 3 caracteres.</span>
+            </div>
+            <div>
+                <input type="email" id="email" placeholder="Digite seu email" class="inputs">
+                <span class="span-required">Digite um email válido.</span>
+            </div>
+            <div>
+                <select class="js-example-basic-single" id="restaurant" placeholder="Digite o Restaurante">
+                    <option></option>
+                    <option>Gauchão</option>
+                    <option>Tangará / Trevo</option>
+                    <option>Restaurante da Rô</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
