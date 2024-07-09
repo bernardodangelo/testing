@@ -29,7 +29,7 @@ app.use(express.static(__dirname));
 
 app.post('/submit', async (req, res) => {
     const { name, email, restaurant } = req.body;
-    const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    // const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     const cookieName = 'voteSubmitted';
 
     if (!name || !email || !restaurant) {
@@ -39,12 +39,12 @@ app.post('/submit', async (req, res) => {
     if (req.cookies[cookieName]) {
         return res.status(400).send('Você já enviou um voto.');
     }
-
+    /*
     const existingVote = await Vote.findOne({ ip: ip });
     if (existingVote) {
         return res.status(400).send('Este IP já enviou um voto.');
     }
-
+    */
     const newVote = new Vote({ name, email, restaurant, ip });
     await newVote.save();
 
